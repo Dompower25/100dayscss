@@ -1,0 +1,156 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
+
+$brown: #786450;
+
+.container {
+    width: 400px;
+    height: 400px;
+    background-color: #D59057;
+    border-radius: 5px;
+    margin: 50px;
+    padding: 40px;
+    box-sizing: border-box;
+    -webkit-box-shadow: -22px 21px 53px 6px rgba(34, 60, 80, 0.26) inset;
+-moz-box-shadow: -22px 21px 53px 6px rgba(34, 60, 80, 0.26) inset;
+box-shadow: -22px 21px 53px 6px rgba(34, 60, 80, 0.26) inset;
+}
+
+.center {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    background-color: #ffff;
+    -webkit-box-shadow: 15px 15px 21px 2px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 15px 15px 21px 2px rgba(34, 60, 80, 0.2);
+box-shadow: 15px 15px 21px 2px rgba(34, 60, 80, 0.2);
+display: grid;
+grid-template-columns: (2fr 1fr);
+}
+
+.card {
+    font-family: 'Open Sans';
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px auto;
+
+    .avatar {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-image: url('https://placeimg.com/800/600/girl');
+        background-position: center;
+        background-size: cover;
+
+        .circle1 {
+			position: absolute;
+			box-sizing: border-box;
+			width: 84px;
+			height: 84px;
+			top: -2px;
+			left: -2px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: $brown $brown $brown transparent;
+			border-radius: 50%;
+			transition: transform 1.5s ease-in-out;            
+		}
+		
+		.circle2 {
+			@extend .circle1;
+			width: 88px;
+			height: 88px;
+			top: -4px;
+			left: -4px;
+			border-color: $brown transparent $brown $brown;
+		}
+
+        &:hover {
+            cursor: pointer;
+            .circle1 {
+				transform: rotate(360deg);
+			}
+			
+			.circle2 {
+				transform: rotate(-360deg);
+			}
+        }
+
+    }   
+    
+    .nameBox {
+        text-align: center;
+        color: #786450;
+        .name {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .profession {
+            font-size: 12px;
+            font-weight: 300;
+        }
+    }
+
+    .buttonBox {
+        display: flex;
+        flex-direction: column;
+
+        .btn {
+            border:1px solid #786450;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 40px;
+            color: #786450;
+            border-radius: 20px;
+            margin: 5px;
+            background-color: inherit;
+            transition: background-color 0.3s linear, color 0.3s linear;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #786450;
+                color: #ffff;                
+            }
+        }
+    }
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+   .border {
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+   }
+
+    .infoBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        background-color: #F5E8DF;
+        width: 100%;
+        height: 100%;
+        color: #786450;
+        font-size: 22px;
+        transition: background-color 0.3s linear;
+        cursor: pointer;
+
+        span {
+            font-size: 13px;
+            font-weight: 100;
+        }
+
+        &:hover {
+            background-color: #cec3ba;
+        }
+    }    
+
+}

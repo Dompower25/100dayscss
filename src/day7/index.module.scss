@@ -1,0 +1,284 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
+
+$blue-light: #B2DAFF;
+$light: #fff;
+
+.container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: #264057;
+    border-radius: 5px;
+    margin: 50px;
+    padding: 40px;
+    box-sizing: border-box;
+    -webkit-box-shadow: -22px 21px 53px 6px rgba(34, 60, 80, 0.26) inset;
+    -moz-box-shadow: -22px 21px 53px 6px rgba(34, 60, 80, 0.26) inset;
+    box-shadow: -22px 21px 53px 6px rgba(34, 60, 80, 0.26) inset;
+    overflow: hidden;
+}
+
+.center {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    background-color: #ffff;
+    -webkit-box-shadow: 15px 15px 21px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 15px 15px 21px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 15px 15px 21px 2px rgba(34, 60, 80, 0.2);
+    display: grid;
+    grid-template-rows: (1fr 4fr);
+    transition: transform 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.moveCard {
+    transform: translateX(145px);
+}
+
+.header {
+    background: #5F98CD;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 3px 3px 0 0;
+    align-items: center;
+
+    .menuBtn {
+        position: relative;
+        width: 30px;
+        height: 20px;        
+        left: 25px;
+        cursor: pointer;
+        
+
+        .topItem {
+            position: absolute;
+            width: 20px;
+            height: 4px;
+            border-radius: 2px;
+            background: #B2DAFF;
+            top: 2px;
+            transition: background 0.3s linear;
+        }
+        .circleItem {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #B2DAFF;
+            border-radius: 50%;
+            left: 22px;
+            transition: background 0.3s linear;
+        }
+        .bottonItem {
+            position: absolute;
+            width: 29px;
+            height: 4px;
+            border-radius: 2px;
+            background: #B2DAFF;
+            top: 15px;
+            transition: background 0.3s linear;
+        }
+
+        &:hover {
+            .topItem, .circleItem, .bottonItem {
+                background: #fff;
+            }
+        }
+
+    }
+
+    span {
+        color: #ffff;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .searchBtn {
+        position: relative;
+        top: 2px;
+        left: -15px;
+        height: 23px;
+        width: 23px;
+        cursor: pointer;
+
+
+
+        .cirlceSearch {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 3px solid $blue-light;
+            transition: border 0.3s linear;
+        }
+        .itemSearch {
+            position: absolute;
+            width: 3px;
+            height: 10px;
+            background: $blue-light;
+            border-radius: 2px;
+            transform: rotate(125deg);
+            top: 11px;
+            left: 17px;
+            transition: background 0.3s linear;
+        }
+
+        &:hover {
+            .cirlceSearch {
+                border: 3px solid $light;
+            }
+            .itemSearch {
+                background: $light;
+            }
+        }    
+    }
+
+    .searchBox {
+        position: relative;
+        bottom: 8px;  
+        right: 240px;
+        transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+              
+        .searhInput {
+            position: absolute;
+            width: 250px;
+            height: 35px;
+            padding: 0 10px;
+            box-sizing: border-box;
+            border-radius: 17px;
+            border: none;
+
+            &::placeholder {
+                font-size: 12px;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .disactiveSearch {
+        transform: translateX(30px);        
+        opacity: 0;
+    }       
+
+    .activeSearch {
+        transform: translateX(-30px);
+        opacity: 1;
+    }
+
+ 
+
+}
+
+.listNotifications {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 4px;
+        height: 100%;
+        background-color: #EBEBEB;
+        left: 31px;
+    }
+
+    .notification {
+        position: relative;
+        box-sizing: border-box;
+        padding: 15px 26px;
+        margin: 0 25px;
+        color: #666666;
+        cursor: pointer;
+
+        @for $i from 2 through 4 {
+            &:nth-child(#{$i}) {
+                animation: here-am-i .5s ease-out ($i/5 + s);
+                animation-fill-mode: both;
+            }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 3px solid #5F98CD;
+            left: 1px;
+            -webkit-box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 1);
+            -moz-box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 1);
+            box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 1);
+            background-color: #fff;
+        }
+
+        &:hover {
+            color: #5F98CD;
+        }
+
+        .time {
+            font-size: 12px;
+            font-weight: 300;
+        }
+        .userName {
+            font-weight: 500;
+        }
+        
+
+    }
+
+    @keyframes here-am-i {
+        0% {
+            transform: translate3d(0,50px,0);
+            opacity: 0;
+        }
+        100% {
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+    }
+  }
+}
+
+.hiddenMenu {
+    position: absolute;
+    width: 150px;
+    background: #43627D;
+    top: 55px;
+    z-index: 0;
+    box-sizing: border-box;
+    padding: 10px 0;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: center;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+    .btn {
+        display: flex;
+        align-items: center;
+        color: #93B2CD;
+        font-size: 14px;
+        font-weight: 300;
+        padding: 17px 10px;
+        transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            background: #304658;
+            color: #fff;
+        }
+        span {
+            margin-left: 10px;
+        }
+    }
+}
+
+.openHiddenMenu {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.closeHiddenMenu {
+    opacity: 0;
+    transform: translateX(30px);
+}
