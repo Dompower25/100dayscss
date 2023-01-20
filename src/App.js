@@ -6,6 +6,7 @@ import Day5 from "./day5";
 import Day6 from "./day6";
 import Day7 from "./day7";
 import Day8 from "./day8";
+import Day9 from "./day9";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       {/* <Day5 />  NO COMPLETE*/}
       {/* <Day6 /> */}
       {/* <Day7 /> */}
-      <Day8 />
+      {/* <Day8 /> */}
+      <Day9 />
     </div>
   );
 }

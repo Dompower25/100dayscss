@@ -15,10 +15,10 @@ const Day8 = () => {
               return <div key={i} className={cn(s[`blubb-${i}`])}></div>;
             })}
             {sparkleArray.map((i) => {
-              return <div className={cn(s[`sparkle-${i}`])}></div>;
+              return <div key={Math.random(100)} className={cn(s[`sparkle-${i}`])}></div>;
             })}
             {sparkleArray.map((i) => {
-              return <div className={cn(s[`sparkle2-${i}`])}></div>;
+              return <div key={Math.random(123123)} className={cn(s[`sparkle2-${i}`])}></div>;
             })}
           </div>
         </div>
