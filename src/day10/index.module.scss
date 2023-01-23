@@ -1,0 +1,167 @@
+$speed: 2s;
+$strokeArr: 930;
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 4px;
+  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  background: #4c4c4c;
+
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .clock {
+      background: #242424;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      -webkit-box-shadow: 0px 0px 0px 6px rgba(58, 58, 58, 0.69);
+      -moz-box-shadow: 0px 0px 0px 6px rgba(58, 58, 58, 0.69);
+      box-shadow: 0px 0px 0px 6px rgba(58, 58, 58, 0.69);
+
+      .spinnerSVG {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transform: rotate(-90deg);
+        animation: rotateSpiner $speed linear infinite;
+
+        ellipse {
+          transform: translate(150px, 150px);
+          stroke: #f85b5b;
+          fill: none;
+          stroke-width: 3;
+          stroke-dasharray: $strokeArr;
+          animation: spinner $speed linear infinite;
+        }
+
+        @keyframes spinner {
+          0% {
+            stroke-dashoffset: $strokeArr;
+          }
+          50% {
+            stroke-dashoffset: 0;
+          }
+          100% {
+            stroke-dashoffset: $strokeArr;
+          }
+        }
+
+        @keyframes rotateSpiner {
+          0% {
+            transform: rotate(-90deg) scaley(1);
+          }
+          50% {
+            transform: rotate(-90deg) scaleY(1);
+          }
+          50.001% {
+            transform: rotate(-90deg) scaleY(-1);
+          }
+          100% {
+            transform: rotate(-90deg) scaleY(-1);
+          }
+        }
+      }
+
+      @for $i from 1 through 15 {
+        .point-set-#{$i} {
+          position: absolute;
+          height: 184px;
+          width: 184px;
+          top: 8px;
+          left: 8px;
+          transform: rotate((($i - 1) * 6) + deg);
+
+          .point-1 {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            top: 0;
+            left: 93px;
+            background: #d3d3d3;
+            border-radius: 50%;
+          }
+
+          .point-2 {
+            @extend .point-1;
+            top: 93px;
+            left: auto;
+            right: 0;
+          }
+
+          .point-3 {
+            @extend .point-1;
+            top: auto;
+            bottom: 0;
+          }
+
+          .point-4 {
+            @extend .point-1;
+            top: 93px;
+            left: 0;
+          }
+        }
+      }
+
+      .dataBox {
+        position: absolute;
+        top: 60px;
+        left: 30px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .date {
+          font-size: 12px;
+        }
+        .time {
+          font-size: 36px;
+          font-weight: 600;
+        }
+        .row {
+          margin-top: 15px;
+          width: 130px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+
+          .beat {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+          }
+
+          .heart {
+            color: red;
+            margin-right: 2px;
+            font-size: 17px;
+            animation: heartbeat 1s linear infinite;
+          }
+          .energy {
+            font-size: 12px;
+          }
+        }
+
+        @keyframes heartbeat {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(0.7);
+          }
+        }
+      }
+    }
+  }
+}
