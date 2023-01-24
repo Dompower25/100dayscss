@@ -9,6 +9,7 @@ import Day7 from "./day7";
 import Day8 from "./day8";
 import Day9 from "./day9";
 import Day10 from "./day10";
+import Day12 from "./day12";
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
       {/* <Day7 /> */}
       {/* <Day8 /> */}
       {/* <Day9 /> */}
-      <Day10 />
+      {/* <Day10 /> */}
+      {/* <Day11/> NO INTEReSTING */}
+      <Day12 />
     </div>
   );
 }
