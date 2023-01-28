@@ -12,6 +12,7 @@ import Day10 from "./day10";
 import Day12 from "./day12";
 import Day13 from "./day13";
 import Day31 from "./day31";
+import Day42 from "./day42";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Day12 />
       <Day13 />
       <Day31 />
+      <Day42 />
     </div>
   );
 }

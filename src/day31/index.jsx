@@ -9,7 +9,6 @@ const Day31 = () => {
   return (
     <div className={cn(s.frame)}>
       {circles.map((circle) => {
-        console.log(circle);
         return (
           <div
             key={Math.random(99999999999)}
