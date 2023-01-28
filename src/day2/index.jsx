@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import cn from 'clsx';
+import cn from "clsx";
 import s from "./index.module.scss";
 
 const Day2 = () => {
@@ -10,10 +10,9 @@ const Day2 = () => {
   };
 
   return (
-    <div>
-        Day 2
+    <div className={s.row}>
       <div
-        className={cn(s.container ,animated ? s.active : s.noAnimation)}
+        className={cn(s.container, animated ? s.active : s.noAnimation)}
         onClick={animationLine}
       >
         <div className={cn(s.line1, s.noAnimation)}></div>

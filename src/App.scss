@@ -1,4 +1,13 @@
 body {
   background-color: rgba(0, 0, 0, 0.685);
+  padding: 100px;
 }
 
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.row {
+  display: block;
+}

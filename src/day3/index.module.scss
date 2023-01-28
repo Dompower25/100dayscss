@@ -3,12 +3,12 @@ $time-animation: 5s;
 
 
 .container {
-    position: absolute;
+    position: relative;
     width: 400px;
     height: 400px;
     background-color: rgb(28, 29, 44);
     border-radius: 5px;
-    margin: 50px;
+    margin: 50px auto;
     z-index: 1;
 }
 

@@ -2,12 +2,12 @@ $cubic-bezier: cubic-bezier(.21,.98,.6,.99);
 $time-animation: 5s;
 
 .container {
-    position: absolute;
+    position: relative;
     width: 400px;
     height: 400px;
     background-color: #E56262;
     border-radius: 5px;
-    margin: 50px;
+    margin: 50px auto;
 }
 
 .center {

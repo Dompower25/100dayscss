@@ -1,70 +1,66 @@
-
-$width: 300px;
-$height: 300px;
+$width: 400px;
+$height: 400px;
 $top: calc(50vh - $height/2);
 $left: calc(50vw - $width/2);
 $line-height: 8px;
 $line-width: 130px;
-$line-spasing-height: calc(4*$line-height);
+$line-spasing-height: calc(4 * $line-height);
 $menu-icon-line-offsetY: $line-width - $line-height;
-$cubic-bezier-in: cubic-bezier(0.1, 1, 0.7,1);
-$cubic-bezier-out: cubic-bezier(1,0.70,1,0.30);
+$cubic-bezier-in: cubic-bezier(0.1, 1, 0.7, 1);
+$cubic-bezier-out: cubic-bezier(1, 0.7, 1, 0.3);
 
+.row {
+  margin: 12px auto;
+}
 
 .container {
-  position: absolute;
-  top: $top;
-  left: $left;
+  position: relative;
   width: $width;
   height: $height;
   border-radius: 40px;
   background: linear-gradient(225deg, #413d3dc5, #555151);
-  box-shadow:  -20px 20px 60px rgba(41, 39, 39, 0.685),
-               20px -20px 60px rgba(102, 96, 96, 0.781);
+  box-shadow: -20px 20px 60px rgba(41, 39, 39, 0.685),
+    20px -20px 60px rgba(102, 96, 96, 0.781);
 
   .line1,
   .line2,
   .line3 {
     position: relative;
-    top: 65px;
-    left: 85px;
+    top: 150px;
+    left: 135px;
     margin-top: $line-spasing-height;
     width: $line-width;
     height: $line-height;
     background-color: aqua;
     border-radius: 3px;
     background: linear-gradient(145deg, #16a85d, #138d4e);
-    box-shadow:  5px 5px 20px #12854a,
-             -5px -5px 20px #18b564;
+    box-shadow: 5px 5px 20px #12854a, -5px -5px 20px #18b564;
   }
-
 }
 
 .active {
   .line1 {
-    animation: animate-line-1 .7s $cubic-bezier-in forwards;
+    animation: animate-line-1 0.7s $cubic-bezier-in forwards;
   }
   .line2 {
-    animation: animate-line-2 .7s $cubic-bezier-in forwards;
+    animation: animate-line-2 0.7s $cubic-bezier-in forwards;
   }
   .line3 {
-    animation: animate-line-3 .7s $cubic-bezier-in forwards;
+    animation: animate-line-3 0.7s $cubic-bezier-in forwards;
   }
 }
 
-.noAnimation { 
-  
+.noAnimation {
   .line1 {
-    animation: animate-line-1-rev .7s ease-in-out;
+    animation: animate-line-1-rev 0.7s ease-in-out;
   }
   .line2 {
     margin: $line-spasing-height 0;
-    animation: animate-line-2-rev .7s ease-in-out;
+    animation: animate-line-2-rev 0.7s ease-in-out;
   }
   .line3 {
-    animation: animate-line-3-rev .7s ease-in-out;
+    animation: animate-line-3-rev 0.7s ease-in-out;
   }
-
 }
 
 @keyframes animate-line-1 {
@@ -103,10 +99,6 @@ $cubic-bezier-out: cubic-bezier(1,0.70,1,0.30);
     transform: translate3d(0, -40px, 0) rotate(135deg);
   }
 }
-
-
-
-
 
 @keyframes animate-line-1-rev {
   0% {

@@ -14,19 +14,17 @@ import Day13 from "./day13";
 
 function App() {
   return (
-    <div className="App">
-      {/* <Day2 /> */}
-      {/* <Day3 /> */}
-      {/* <Day4 /> */}
-      {/* <Day5 />  NO COMPLETE*/}
-      {/* <Day6 /> */}
-      {/* <Day7 /> */}
-      {/* <Day8 /> */}
-      {/* <Day9 /> */}
-      {/* <Day10 /> */}
-      {/* <Day11/> NO INTERESTING */}
-      {/* <Day12 /> */}
-      {/* <Day13/> NO COMPLETE */}
+    <div className="app">
+      <Day2 />
+      <Day3 />
+      <Day4 />
+      <Day6 />
+      <Day7 />
+      <Day8 />
+      <Day9 />
+      <Day10 />
+      <Day12 />
+      <Day13 />
     </div>
   );
 }

@@ -25,40 +25,37 @@ const Day10 = () => {
   }, []);
 
   return (
-    <div>
-      <div>Day 10</div>
-      <div className={s.frame}>
-        <div className={s.center}>
-          <div className={s.clock}>
-            <svg
-              className={s.spinnerSVG}
-              id="elnbviCYfXt1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 300 300"
-              shape-rendering="geometricPrecision"
-              text-rendering="geometricPrecision"
-            >
-              <ellipse rx="145" ry="145" />
-            </svg>
-            {doted.map((i) => {
-              return (
-                <div key={i} className={cn(s[`point-set-${i}`])}>
-                  <div className={s[`point-1`]}></div>
-                  <div className={s[`point-2`]}></div>
-                  <div className={s[`point-3`]}></div>
-                  <div className={s[`point-4`]}></div>
-                </div>
-              );
-            })}
-            <div className={s.dataBox}>
-              <div className={s.date}>{dateNow}</div>
-              <div className={s.time}>{time}</div>
-              <div className={s.row}>
-                <div className={s.beat}>
-                  <FavoriteIcon className={s.heart} /> <span>81</span>
-                </div>
-                <div className={s.energy}>1248 kcal</div>
+    <div className={s.frame}>
+      <div className={s.center}>
+        <div className={s.clock}>
+          <svg
+            className={s.spinnerSVG}
+            id="elnbviCYfXt1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 300 300"
+            shape-rendering="geometricPrecision"
+            text-rendering="geometricPrecision"
+          >
+            <ellipse rx="145" ry="145" />
+          </svg>
+          {doted.map((i) => {
+            return (
+              <div key={i} className={cn(s[`point-set-${i}`])}>
+                <div className={s[`point-1`]}></div>
+                <div className={s[`point-2`]}></div>
+                <div className={s[`point-3`]}></div>
+                <div className={s[`point-4`]}></div>
               </div>
+            );
+          })}
+          <div className={s.dataBox}>
+            <div className={s.date}>{dateNow}</div>
+            <div className={s.time}>{time}</div>
+            <div className={s.row}>
+              <div className={s.beat}>
+                <FavoriteIcon className={s.heart} /> <span>81</span>
+              </div>
+              <div className={s.energy}>1248 kcal</div>
             </div>
           </div>
         </div>
