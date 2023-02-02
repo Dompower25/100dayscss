@@ -3,11 +3,27 @@ body {
   padding: 100px;
 }
 
-.app {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
 .row {
   display: block;
+}
+
+@media (min-width: 448px) {
+  .app {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
